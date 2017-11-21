@@ -20,9 +20,9 @@ dependencies {
 }
 ```
 2. You need to implement two generic interfaces:
-```java
+
 Pair and Binder. Interface Pair give view information about models for left and right parts of view. Binder - is a kind of Adapter which bind model to front view
-```
+
 # Customization
 | Method  | Description |
 | ------------- | ------------- |
