@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vrg.sample.RoundedConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/text_gradient"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="TextView" />
+
+</com.vrg.sample.RoundedConstraintLayout>
