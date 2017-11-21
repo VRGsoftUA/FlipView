@@ -33,5 +33,5 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.3.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
 
-    compile project(':lib')
+    compile 'com.github.VRGsoftUA:FlipView:1.0'
 }
