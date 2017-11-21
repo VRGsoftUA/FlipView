@@ -1,7 +1,7 @@
 #### [HIRE US](http://vrgsoft.net/)
 
 # FlipView
-![alt text](https://github.com/AndreiNikitin/FlipView/blob/master/ezgif.com-video-to-gif-2.gif "gif")
+![alt text](https://github.com/VRGsoftUA/FlipView/blob/master/ezgif.com-video-to-gif-2.gif "gif")
 
 # Usage
 
