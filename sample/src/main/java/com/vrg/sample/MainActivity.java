@@ -10,7 +10,7 @@ import com.vrg.flipview.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private DoubleFlipView<ImageItem> container;
 
     @Override
@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity{
         container.setLeftBinder(leftBinder);
         container.setRightBinder(rightBinder);
         container.setItems(pairs);
+        container.setItemListener(new DoubleFlipView.OnItemClickListener<ImageItem>() {
+            @Override
+            public void onItemClick(int position, boolean left, ImageItem item) {
+
+            }
+        });
         container.notifyDatasetChanged();
     }
 }

@@ -21,7 +21,6 @@ public class ImageBinder implements FlipView.ViewBinder<ImageItem> {
     @Override
     public void bindView(ImageItem item) {
         Glide.with(photoView.getContext()).load(item.getUserPhoto()).into(photoView);
-        photoView.setImageResource(item.getUserPhoto());
         nameView.setText(item.getUserName());
     }
 

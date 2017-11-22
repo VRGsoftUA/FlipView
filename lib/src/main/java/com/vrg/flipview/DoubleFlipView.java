@@ -22,6 +22,9 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
     private int centerX;
     private boolean animationRunning;
 
+    private OnItemClickListener<I> itemListener;
+    private List<Pair<I>> pairs;
+
     public DoubleFlipView(Context context) {
         super(context);
         initView();
@@ -152,6 +155,10 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
         rightView.setHardwareAccelerate(hardwareAccelerate);
     }
 
+    public void setItemListener(OnItemClickListener itemListener) {
+        this.itemListener = itemListener;
+    }
+
     public void setRightBinder(FlipView.ViewBinder<I> binder){
         rightView.setBinder(binder);
     }
@@ -166,6 +173,7 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
     }
 
     public void setItems(List<Pair<I>> pairs){
+        this.pairs = pairs;
         List<I> left = new ArrayList<>();
         List<I> right = new ArrayList<>();
         for(Pair<I> pair : pairs){
@@ -191,6 +199,9 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
         animationRunning = true;
 
         if (v.equals( leftView)) {
+            if (itemListener != null){
+                itemListener.onItemClick(leftView.getCurrentPosition(), true, pairs.get(leftView.getCurrentPosition()).getLeftItem());
+            }
             ViewCompat.setZ(leftView, 2);
             ViewCompat.setZ(rightView, 1);
             leftView.setConfirmVisible(true);
@@ -221,6 +232,9 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
                         }
                     });
         } else {
+            if (itemListener != null){
+                itemListener.onItemClick(rightView.getCurrentPosition(), false, pairs.get(rightView.getCurrentPosition()).getRightItem());
+            }
             ViewCompat.setZ(leftView, 1);
             ViewCompat.setZ(rightView, 2);
             rightView.setConfirmVisible(true);
@@ -251,6 +265,9 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
                         }
                     });
         }
+    }
+    public interface OnItemClickListener<I>{
+        void onItemClick(int position, boolean left, I item);
     }
 }
 
