@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.VRGsoftUA:FlipView:1.0'
+    compile 'com.github.VRGsoftUA:FlipView:1.0.1'
 }
 ```
 2. You need to implement two generic interfaces:
