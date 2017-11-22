@@ -34,3 +34,4 @@ public class ImageBinder implements FlipView.ViewBinder<ImageItem> {
         return R.layout.item_back;
     }
 }
+

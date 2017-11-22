@@ -271,3 +271,4 @@ public class DoubleFlipView<I> extends LinearLayout implements View.OnClickListe
     }
 }
 
+
